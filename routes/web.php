@@ -11,12 +11,11 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
-Route::get('/test1', function () {
-    return 'OK!Yeah!';
-});
-Route::get('/post', function () {
-    return view('post');
-});
+});*/
+
+Route::get('/', 'PostController@index');
+Route::get('post/create', 'PostController@create');
+Route::get('post/delete/{id}', 'PostController@delete', function ($id) {});
+Route::post('post', 'PostController@store');
